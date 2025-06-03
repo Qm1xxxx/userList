@@ -2,23 +2,25 @@ import Card from '../UI/Card';
 import styles from './UserList.module.css';
 
 const UserList = (props) => {
+    console.log(props)
 
-    // const number = [
+    // const numbers = [
     //     { name: 'Alex', age: 15 },
-    //     {name: 'Max', age: 25}
+    //     { name: 'Max', age: 25 }
     // ]
-    // const res = number.map((el) => `Я ${el.name}, мне ${el.age} лет`)
+
+    // const res = numbers.map((el) => `Я ${el.name}, мне ${el.age} лет`)
 
     // console.log(res)
 
     return (
-        <Card className={styles.users}>
+        props.users.length  !== 0 && (<Card className={styles.users}>
             <ul>
-                {props.user.map((user) => {
-                    <li>{user.name} - {user.age} лет</li>
+                {props.users.map((user) => {
+                    return <li key={user.id}>{user.name} - {user.age} лет</li>
                 })}
             </ul>
-        </Card>
+        </Card>)
     )
 }
 

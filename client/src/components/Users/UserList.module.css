@@ -9,8 +9,8 @@
     padding: 1.5rem;
 }
 
-.users ul li {
-    border: 1px solid #ccc;
+.users li {
+    border: 1px solid #CCC;
     margin: .5rem 0;
-    padding: .5rem;
+    padding: 0.5rem;
 }

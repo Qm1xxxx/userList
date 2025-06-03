@@ -4,11 +4,12 @@ import UserList from './components/Users/UserList';
 
 function App() {
 
-  const [userList, setUserList] = useState()
+  const [userList, setUserList] = useState([])
 
-  const CreateUserHandler = (name, age) => {
+  const createUserHandler = (name, age) => {
+    console.log(name, age)
     setUserList((prevUserList) => {
-      return[
+      return [
         ...prevUserList,
         {
           name: name,
@@ -21,10 +22,11 @@ function App() {
 
   return (
     <>
-  <CreateUser onCreateUser={CreateUserHandler} /> 
-  <UserList users={userList}/>
-  </>
+      <CreateUser onCreateUser={createUserHandler} />
+      <UserList users={userList} />
+    </>
   );
+
 }
 
 export default App;
